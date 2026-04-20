@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".MainMenu2">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/saludappicono" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView3">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:columnCount="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPeso"
+                style="@style/SaludCardStyle">
+                <LinearLayout style="@style/SaludCardContentStyle">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_peso" />
+                    <TextView style="@style/TitleTextStyle"
+                        android:text="Seguimiento integral del peso" />
+                    <TextView style="@style/SubtitleTextStyle"
+                        android:text="Registro, IMC, meta y progreso." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPresion"
+                style="@style/SaludCardStyle">
+                <LinearLayout style="@style/SaludCardContentStyle">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_presion" />
+                    <TextView style="@style/TitleTextStyle"
+                        android:text="Control de Presión Arterial" />
+                    <TextView style="@style/SubtitleTextStyle"
+                        android:text="Registro sistólica, diastólica e historial." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardGlucosa"
+                style="@style/SaludCardStyle">
+                <LinearLayout style="@style/SaludCardContentStyle">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_glucosa" />
+                    <TextView style="@style/TitleTextStyle"
+                        android:text="Control de Glucosa" />
+                    <TextView style="@style/SubtitleTextStyle"
+                        android:text="Niveles en sangre y registros por fecha." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardActividad"
+                style="@style/SaludCardStyle">
+                <LinearLayout style="@style/SaludCardContentStyle">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_actividad" />
+                    <TextView style="@style/TitleTextStyle"
+                        android:text="Contro de Actividad Física" />
+                    <TextView style="@style/SubtitleTextStyle"
+                        android:text="Tipos, duración y hábitos saludables." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAgua"
+                style="@style/SaludCardStyle">
+                <LinearLayout style="@style/SaludCardContentStyle">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_agua" />
+                    <TextView style="@style/TitleTextStyle"
+                        android:text="Control de Hidratación" />
+                    <TextView style="@style/SubtitleTextStyle"
+                        android:text="Consumo diario, metas y progreso." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMedicina"
+                style="@style/SaludCardStyle">
+                <LinearLayout style="@style/SaludCardContentStyle">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_medicina" />
+                    <TextView style="@style/TitleTextStyle"
+                        android:text="Medicinas / Recordatorios" />
+                    <TextView style="@style/SubtitleTextStyle"
+                        android:text="Tiempos, horarios y organización personal." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
