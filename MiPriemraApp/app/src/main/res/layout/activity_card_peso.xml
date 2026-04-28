@@ -12,23 +12,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:baselineAligned="false"> <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Control de Peso"
-        android:textAlignment="center"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#1A4375"
-        android:layout_marginBottom="32dp"
-        tools:ignore="HardcodedText" />
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Control de Peso"
+            android:textAlignment="center"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1A4375"
+            android:layout_marginBottom="32dp"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edad"
-            android:textColor="#333333"
+            android:textColor="#222222"
+            android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <EditText
@@ -41,6 +44,8 @@
             android:textSize="16sp"
             android:padding="12dp"
             android:inputType="number"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
             android:importantForAutofill="yes"
             android:autofillHints="personAge"
             android:layout_marginBottom="20dp"
@@ -59,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="Peso"
                 android:textColor="#1A4375"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.SwitchCompat
@@ -68,6 +74,7 @@
                 android:minHeight="48dp"
                 android:text="KG / LB "
                 android:textColor="#1A4375"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -81,6 +88,8 @@
             android:padding="12dp"
             android:hint="Peso"
             android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
             android:layout_marginBottom="20dp"
             android:importantForAutofill="no"
             tools:ignore="HardcodedText" />
@@ -97,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:text="Estatura"
                 android:textColor="#1A4375"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.SwitchCompat
@@ -105,6 +115,8 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="CM / IN "
+                android:textColor="#1A4375"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -118,6 +130,8 @@
             android:inputType="numberDecimal"
             android:textSize="16sp"
             android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
             android:layout_marginBottom="32dp"
             android:importantForAutofill="no"
             tools:ignore="HardcodedText" />
@@ -138,12 +152,14 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF"
             android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="#FFFFFF"
                 android:padding="16dp">
 
                 <LinearLayout
@@ -158,8 +174,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IMC" android:textSize="12sp" tools:ignore="HardcodedText" />
-                        <TextView android:id="@+id/tvImcVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" tools:ignore="HardcodedText" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IMC" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
+                        <TextView android:id="@+id/tvImcVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -168,8 +184,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PESO IDEAL" android:textSize="12sp" tools:ignore="HardcodedText" />
-                        <TextView android:id="@+id/tvPesoIdealVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" tools:ignore="HardcodedText" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PESO IDEAL" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
+                        <TextView android:id="@+id/tvPesoIdealVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -178,8 +194,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GRASA" android:textSize="12sp" tools:ignore="HardcodedText" />
-                        <TextView android:id="@+id/tvGrasaVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" tools:ignore="HardcodedText" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GRASA" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
+                        <TextView android:id="@+id/tvGrasaVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -198,7 +214,7 @@
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#1A237E"
+                    android:textColor="#1A4375"
                     tools:ignore="HardcodedText" />
 
             </LinearLayout>
