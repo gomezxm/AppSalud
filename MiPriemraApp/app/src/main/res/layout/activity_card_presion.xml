@@ -1,69 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E6F0FA">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imgHeader"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_presion" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Presión Arterial"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#1A237E"
-        app:layout_constraintBottom_toBottomOf="@+id/imgHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgHeader"
-        app:layout_constraintTop_toTopOf="@+id/imgHeader" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutSistolica"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:hint="Sistólica (mmHg)"
-        app:layout_constraintTop_toBottomOf="@+id/imgHeader">
-        <com.google.android.material.textfield.TextInputEditText
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:padding="4dp"
+            android:layout_marginTop="26dp"
+            android:text="Control de Presión Arterial"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutDiastolica"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:hint="Diastólica (mmHg)"
-        app:layout_constraintTop_toBottomOf="@+id/layoutSistolica">
-        <com.google.android.material.textfield.TextInputEditText
+        <Button
+            android:id="@+id/btnFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar fecha" />
+
+        <TextView
+            android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="Fecha no seleccionada" />
 
-    <Button
-        android:id="@+id/btnGuardarPresion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Registrar Presión"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutDiastolica" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hora de la medición"
+            android:layout_marginTop="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valores de la medición"
+            android:layout_marginTop="16dp" />
+
+        <!-- Fila horizontal para los NumberPickers -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Columna Sistólica -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sistólica" />
+                <NumberPicker
+                    android:id="@+id/npSistolica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Columna Diastólica -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diastólica" />
+                <NumberPicker
+                    android:id="@+id/npDiastolica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Columna Pulso -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pulso" />
+                <NumberPicker
+                    android:id="@+id/npPulso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brazo utilizado"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/rgBrazo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbIzquierdo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brazo izquierdo" />
+
+            <RadioButton
+                android:id="@+id/rbDerecho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brazo derecho" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnAnalizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Analizar medición"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/txtResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

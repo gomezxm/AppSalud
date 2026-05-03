@@ -7,6 +7,7 @@ import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.jvm.java
 
 class TransitionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +35,7 @@ class TransitionActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val intentFinal = when (destino) {
                 "PESO" -> Intent(this, CardPeso::class.java)
-                // "PRESION" -> Intent(this, CardPresion::class.java) <-- Crea estas clases después
+                "PRESION" -> Intent(this, cardPresion::class.java)
                 else -> Intent(this, MainMenu2::class.java)
             }
             startActivity(intentFinal)
