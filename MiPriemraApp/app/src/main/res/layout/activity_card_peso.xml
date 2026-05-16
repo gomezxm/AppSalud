@@ -1,224 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8"
-    android:fillViewport="true">
+    android:background="#F0F4F8">
 
-    <LinearLayout
+    <!-- El ScrollView contiene todo tu formulario original -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:baselineAligned="false">
-
-        <TextView
-            android:id="@+id/tvTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Control de Peso"
-            android:textAlignment="center"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:textColor="#1A4375"
-            android:layout_marginBottom="32dp"
-            tools:ignore="HardcodedText" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edad"
-            android:textColor="#222222"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
-
-        <EditText
-            android:id="@+id/etEdad"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:background="@drawable/input_round"
-            android:hint="Ej. 25"
-            android:textSize="16sp"
-            android:padding="12dp"
-            android:inputType="number"
-            android:textColor="#000000"
-            android:textColorHint="#666666"
-            android:importantForAutofill="yes"
-            android:autofillHints="personAge"
-            android:layout_marginBottom="20dp"
-            tools:ignore="HardcodedText" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="4dp">
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:baselineAligned="false">
+
+            <!-- Margen superior aumentado a 40dp para que el título no choque con el botón -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Control de Peso"
+                android:textAlignment="center"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#1A4375"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="32dp"
+                tools:ignore="HardcodedText" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Peso"
-                android:textColor="#1A4375"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/swPesoUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:text="KG / LB "
-                android:textColor="#1A4375"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/etPeso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:background="@drawable/input_round"
-            android:textSize="16sp"
-            android:padding="12dp"
-            android:hint="Peso"
-            android:inputType="numberDecimal"
-            android:textColor="#000000"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="20dp"
-            android:importantForAutofill="no"
-            tools:ignore="HardcodedText" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Estatura"
-                android:textColor="#1A4375"
+                android:text="Edad"
+                android:textColor="#222222"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/swEstaturaUnit"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etEdad"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
-                android:text="CM / IN "
-                android:textColor="#1A4375"
-                android:textStyle="bold"
+                android:background="@drawable/input_round"
+                android:hint="Ej. 25"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:inputType="number"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:importantForAutofill="yes"
+                android:autofillHints="personAge"
+                android:layout_marginBottom="20dp"
                 tools:ignore="HardcodedText" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/etEstatura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:background="@drawable/input_round"
-            android:hint="Estatura"
-            android:inputType="numberDecimal"
-            android:textSize="16sp"
-            android:padding="12dp"
-            android:textColor="#000000"
-            android:textColorHint="#666666"
-            android:layout_marginBottom="32dp"
-            android:importantForAutofill="no"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:id="@+id/btnCalcular"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="CALCULAR"
-            android:textStyle="bold"
-            android:backgroundTint="#1A4375"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="32dp"
-            tools:ignore="HardcodedText" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#FFFFFF"
-            android:layout_marginBottom="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="#FFFFFF"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Peso"
+                    android:textColor="#1A4375"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swPesoUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="KG / LB "
+                    android:textColor="#1A4375"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etPeso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:background="@drawable/input_round"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:hint="Peso"
+                android:inputType="numberDecimal"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:layout_marginBottom="20dp"
+                android:importantForAutofill="no"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Estatura"
+                    android:textColor="#1A4375"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swEstaturaUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="CM / IN "
+                    android:textColor="#1A4375"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etEstatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:background="@drawable/input_round"
+                android:hint="Estatura"
+                android:inputType="numberDecimal"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#666666"
+                android:layout_marginBottom="32dp"
+                android:importantForAutofill="no"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="CALCULAR"
+                android:textStyle="bold"
+                android:backgroundTint="#1A4375"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="32dp"
+                tools:ignore="HardcodedText" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false">
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="16dp">
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IMC" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
-                        <TextView android:id="@+id/tvImcVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IMC" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
+                            <TextView android:id="@+id/tvImcVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PESO IDEAL" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
+                            <TextView android:id="@+id/tvPesoIdealVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GRASA" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
+                            <TextView android:id="@+id/tvGrasaVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
+                        </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PESO IDEAL" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
-                        <TextView android:id="@+id/tvPesoIdealVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
-                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#DDDDDD"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp" />
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                    <TextView
+                        android:id="@+id/tvClasificacion"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GRASA" android:textSize="12sp" android:textColor="#555555" android:textStyle="bold" tools:ignore="HardcodedText" />
-                        <TextView android:id="@+id/tvGrasaVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="18sp" android:textColor="#000000" tools:ignore="HardcodedText" />
-                    </LinearLayout>
+                        android:text="Resultado"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A4375"
+                        tools:ignore="HardcodedText" />
+
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#DDDDDD"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp" />
+        </LinearLayout>
+    </ScrollView>
 
-                <TextView
-                    android:id="@+id/tvClasificacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Resultado"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A4375"
-                    tools:ignore="HardcodedText" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHistorial"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:text="Historial"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#1A4375"
+        android:background="@drawable/bg_boton_historial"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:elevation="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        tools:ignore="HardcodedText" />
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>

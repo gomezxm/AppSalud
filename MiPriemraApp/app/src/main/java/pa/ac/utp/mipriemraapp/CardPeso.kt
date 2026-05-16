@@ -1,5 +1,6 @@
 package pa.ac.utp.mipriemraapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -26,6 +27,7 @@ class CardPeso : AppCompatActivity() {
         val tvPesoIdeal = findViewById<TextView>(R.id.tvPesoIdealVal)
         val tvGrasa = findViewById<TextView>(R.id.tvGrasaVal)
         val tvClasificacion = findViewById<TextView>(R.id.tvClasificacion)
+        val btnHistorial = findViewById<Button>(R.id.btnHistorial)
 
         // 2. Listeners dinámicos para los Hints
         swPeso.setOnCheckedChangeListener { _, isChecked ->
@@ -35,6 +37,11 @@ class CardPeso : AppCompatActivity() {
         swEstatura.setOnCheckedChangeListener { _, isChecked ->
             etEstatura.hint = if (isChecked) "Estatura (in)" else "Estatura (cm)"
             etEstatura.text.clear()
+        }
+
+        btnHistorial.setOnClickListener {
+            val intent = Intent(this, HistorialPesoActivity::class.java)
+            startActivity(intent)
         }
 
         // 3. Listener del botón

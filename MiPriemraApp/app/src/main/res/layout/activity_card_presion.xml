@@ -1,150 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5FB">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:layout_marginTop="26dp"
-            android:text="Control de Presión Arterial"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Seleccionar fecha" />
-
-        <TextView
-            android:id="@+id/txtFecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha no seleccionada" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hora de la medición"
-            android:layout_marginTop="16dp" />
-
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:timePickerMode="spinner" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Valores de la medición"
-            android:layout_marginTop="16dp" />
-
-        <!-- Fila horizontal para los NumberPickers -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <!-- Columna Sistólica -->
-            <LinearLayout
-                android:layout_width="0dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sistólica" />
-                <NumberPicker
-                    android:id="@+id/npSistolica"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <!-- Columna Diastólica -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Diastólica" />
-                <NumberPicker
-                    android:id="@+id/npDiastolica"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            <!-- Columna Pulso -->
-            <LinearLayout
-                android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="Datos de la Medición"
+                        android:textColor="#333"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Fila de Selección de Fecha y Hora Separados -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <Button
+                            android:id="@+id/btnFecha"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:text="Fecha"
+                            android:textAllCaps="false"
+                            android:textColor="#333"
+                            app:icon="@android:drawable/ic_menu_my_calendar" />
+
+                        <Button
+                            android:id="@+id/btnHora"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            android:text="Hora"
+                            android:textAllCaps="false"
+                            android:textColor="#333"
+                            app:icon="@android:drawable/ic_menu_recent_history" />
+                    </LinearLayout>
+
+                    <!-- NumberPickers -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="SISTÓLICA\n(mmHg)" android:gravity="center" android:textSize="10sp" android:textStyle="bold" />
+                            <NumberPicker android:id="@+id/npSistolica" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="DIASTÓLICA\n(mmHg)" android:gravity="center" android:textSize="10sp" android:textStyle="bold" />
+                            <NumberPicker android:id="@+id/npDiastolica" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="PULSO\n(BPM)" android:gravity="center" android:textSize="10sp" android:textStyle="bold" />
+                            <NumberPicker android:id="@+id/npPulso" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Brazo Utilizado:"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgBrazo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RadioButton android:id="@+id/rbIzquierdo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Izquierdo" />
+                        <RadioButton android:id="@+id/rbDerecho" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Derecho" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnAnalizar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#7E3FF2"
+                android:text="ANALIZAR MEDICIÓN"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="30dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
+                app:cardCornerRadius="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pulso" />
-                <NumberPicker
-                    android:id="@+id/npPulso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="RESUMEN Y ANÁLISIS" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+                    <TextView android:id="@+id/txtResultado" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:text="Esperando análisis..." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Brazo utilizado"
-            android:layout_marginTop="16dp" />
-
-        <RadioGroup
-            android:id="@+id/rgBrazo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/rbIzquierdo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Brazo izquierdo" />
-
-            <RadioButton
-                android:id="@+id/rbDerecho"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Brazo derecho" />
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/btnAnalizar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Analizar medición"
-            android:layout_marginTop="20dp" />
-
-        <TextView
-            android:id="@+id/txtResultado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

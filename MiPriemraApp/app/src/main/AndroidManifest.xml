@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/saludappicono"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiPriemraApp">
-
+        <activity
+            android:name=".HistorialPesoActivity"
+            android:exported="false" />
         <activity
             android:name=".cardMedicina"
             android:exported="false" />
@@ -36,18 +38,18 @@
         <activity
             android:name=".MainMenu2"
             android:exported="false" />
-
         <activity
             android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:exported="false" /> </application>
+            android:exported="false" />
+    </application>
 
 </manifest>
